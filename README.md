@@ -10,15 +10,9 @@ In this project, we are going to make a React-Redux bookstore application to dem
 
 ---
 
-## Screenshots
-
-### Desktop
-
----
-
 ## Live Demo
 
-[Live Link](/)
+[Live Link](https://react-bookstore-m1.herokuapp.com/)
 
 ---
 
@@ -26,10 +20,6 @@ In this project, we are going to make a React-Redux bookstore application to dem
 
 - HTML5
 - CSS3
-- Font Awesome
-- Google Fonts
-- W3 Validators
-- Bootstrap
 - Javascript
 - React
 - Redux
