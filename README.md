@@ -1,5 +1,11 @@
 # [React Project: Bookstore App]
 
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+
+
 In this project, we are going to make a React-Redux bookstore application to demonstrate mastery of building React components by following step-by-step guidelines from a fake company based in "Germany". Awesomized with pure CSS. This project is completed by Seth Zea and Shubbham Raj, in partial requirements of the Microverse cirriculum.
 
 ---
@@ -12,7 +18,7 @@ In this project, we are going to make a React-Redux bookstore application to dem
 
 ## Live Demo
 
-[Live Link](https://blissful-bookstore-87654.herokuapp.com/)
+[Live Link](/)
 
 ---
 
@@ -72,7 +78,10 @@ Contributions, issues and feature requests are welcome! Start by:
 
 👤 **Shubbham Raj**
 
-<!--  -->
+- Website: [Shubham Raj](https://www.shubhamraj.dev/)
+- Github: [@ShubhamRaj](https://github.com/shubham14p3)
+- Linkedin: [Shubham14p3](https://www.linkedin.com/in/shubham14p3/)
+- Email: shubham14p3@gmail.com
 
 ---
 
@@ -95,3 +104,14 @@ Give a ⭐️ if you like this project!
 This project is [MIT](lic.url) licensed.
 
 ---
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/sz16900/react-bookstore.svg?style=flat-square
+[contributors-url]: https://github.com/sz16900/react-bookstore/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/sz16900/react-bookstore.svg?style=flat-square
+[forks-url]: https://github.com/sz16900/react-bookstore/network/members
+[stars-shield]: https://img.shields.io/github/stars/sz16900/react-bookstore.svg?style=flat-square
+[stars-url]: https://github.com/sz16900/react-bookstore/stargazers
+[issues-shield]: https://img.shields.io/github/issues/sz16900/react-bookstore.svg?style=flat-square
+[issues-url]: https://github.com/sz16900/react-bookstore/issues
