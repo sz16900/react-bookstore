@@ -1,7 +1,5 @@
 import React from 'react';
 
-const BookForm = () => {
-  return <div>hello</div>;
-};
+const BookForm = () => <div>hello</div>;
 
 export default BookForm;
