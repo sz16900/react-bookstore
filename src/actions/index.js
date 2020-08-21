@@ -11,4 +11,4 @@ const removeBook = book => ({
   payload: book,
 });
 
-export { createBook, removeBook };
+export default { createBook, removeBook };
