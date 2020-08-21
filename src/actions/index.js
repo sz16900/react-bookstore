@@ -1,11 +1,11 @@
-export const createBook = book => ({
+const createBook = (book) => ({
   type: 'CREATE_BOOK',
   book,
 });
 
-export const removeBook = book => ({
+const removeBook = (book) => ({
   type: 'REMOVE_BOOK',
   book,
 });
 
-export default createBook;
+export default { createBook, removeBook };
