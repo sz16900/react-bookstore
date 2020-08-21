@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import './App.css';
 import { Provider } from 'react-redux';
-
-// Create store
 import { createStore } from 'redux';
 import rootReducer from './reducers/index';
+import App from './components/App';
+import './App.css';
 
 const initialState = {
   books: [
@@ -23,5 +21,5 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
