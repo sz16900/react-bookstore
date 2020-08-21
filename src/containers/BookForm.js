@@ -15,7 +15,7 @@ const BookForm = () => (
     <input name="title" type="text" />
     <h2>Category:</h2>
     <select name="category">
-      {categories.map((category) => (
+      {categories.map(category => (
         <option key={category}>{category}</option>
       ))}
     </select>
