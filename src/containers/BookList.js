@@ -13,21 +13,17 @@ const BookList = ({ books }) => (
       </tr>
     </thead>
     <tbody>
-      {books.map(book => (
+      {books.map((book) => (
         <Book book={book} key={book.id} />
       ))}
     </tbody>
   </table>
 );
 
-const mapStateToProps = state => ({ books: state.books });
-
-// BookList.defaultProps = {
-//   books: [],
-// };
+const mapStateToProps = (state) => ({ books: state.books });
 
 BookList.propTypes = {
-  books: PropTypes.objectOf(PropTypes.array),
+  books: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default connect(mapStateToProps)(BookList);
