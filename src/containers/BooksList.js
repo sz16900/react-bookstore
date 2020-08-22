@@ -21,7 +21,7 @@ class BooksList extends Component {
       <Book book={book} key={book.id} onClick={() => this.handleRemoveBook(book.id)} />
     ));
     return (
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th>Book ID</th>

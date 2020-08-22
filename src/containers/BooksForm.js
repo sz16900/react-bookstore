@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addBook } from '../actions/index';
 
-
 const categories = [
   { id: 1, category: 'Action' },
   { id: 2, category: 'Biography' },
