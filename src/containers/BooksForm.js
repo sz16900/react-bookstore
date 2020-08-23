@@ -38,6 +38,7 @@ class BooksForm extends Component {
       title: '',
       category: categories[0].category,
     }));
+    event.target.reset();
   }
 
   render() {
