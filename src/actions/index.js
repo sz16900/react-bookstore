@@ -1,14 +1,14 @@
 const CREATE_BOOK = 'CREATE_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
-const createBook = book => ({
+const addBook = book => ({
   type: CREATE_BOOK,
-  payload: book,
+  book,
 });
 
-const removeBook = book => ({
+const removeBook = id => ({
   type: REMOVE_BOOK,
-  payload: book,
+  id,
 });
 
-export { createBook, removeBook };
+export { addBook, removeBook };
