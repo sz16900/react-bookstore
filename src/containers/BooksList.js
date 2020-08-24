@@ -10,7 +10,6 @@ class BooksList extends Component {
     super(props);
     this.handleRemoveBook = this.handleRemoveBook.bind(this);
     this.handleFilterChange = this.handleFilterChange.bind(this);
-    console.log(props);
   }
 
   handleRemoveBook(id) {
@@ -20,6 +19,8 @@ class BooksList extends Component {
 
   handleFilterChange(event) {
     event.preventDefault();
+    const { changeFilter } = this.props;
+    changeFilter(event.target.value);
   }
 
   render() {
@@ -53,21 +54,23 @@ BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
   removeBook: PropTypes.func.isRequired,
   filter: PropTypes.string,
-  filterCategory: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
 };
 
 BooksList.defaultProps = {
   filter: 'All',
 };
 
-const mapStateToProps = (state) => ({
-  books: state.books,
-  filter: state.filter,
-});
+const mapStateToProps = (state) => {
+  return {
+    books: state.books,
+    filter: state.filter,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   removeBook: (id) => dispatch(removeBook(id)),
-  filterCategory: (option) => dispatch(changeFilter(option)),
+  changeFilter: (option) => dispatch(changeFilter(option)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
