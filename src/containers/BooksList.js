@@ -27,8 +27,8 @@ class BooksList extends Component {
     const { books } = this.props;
     const { filter } = this.props;
     const booksArr = books
-      .filter((book) => filter === 'All' || book.category === filter)
-      .map((book) => (
+      .filter(book => filter === 'All' || book.category === filter)
+      .map(book => (
         <Book
           book={book}
           key={book.id}
@@ -64,16 +64,14 @@ BooksList.defaultProps = {
   filter: 'All',
 };
 
-const mapStateToProps = (state) => {
-  return {
-    books: state.books,
-    filter: state.filter,
-  };
-};
+const mapStateToProps = state => ({
+  books: state.books,
+  filter: state.filter,
+});
 
-const mapDispatchToProps = (dispatch) => ({
-  removeBook: (id) => dispatch(removeBook(id)),
-  changeFilter: (option) => dispatch(changeFilter(option)),
+const mapDispatchToProps = dispatch => ({
+  removeBook: id => dispatch(removeBook(id)),
+  changeFilter: option => dispatch(changeFilter(option)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
