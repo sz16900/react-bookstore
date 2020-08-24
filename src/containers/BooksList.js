@@ -25,13 +25,16 @@ class BooksList extends Component {
 
   render() {
     const { books } = this.props;
-    const booksArr = books.map((book) => (
-      <Book
-        book={book}
-        key={book.id}
-        onClick={() => this.handleRemoveBook(book.id)}
-      />
-    ));
+    const { filter } = this.props;
+    const booksArr = books
+      .filter((book) => filter === 'All' || book.category === filter)
+      .map((book) => (
+        <Book
+          book={book}
+          key={book.id}
+          onClick={() => this.handleRemoveBook(book.id)}
+        />
+      ));
     return (
       <>
         <CategoryFilter handleFilterChange={this.handleFilterChange} />
