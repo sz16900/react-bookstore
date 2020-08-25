@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { removeBook } from '../actions/index';
+import styled from 'styled-components';
+
+const StyledTable = styled.div``;
 
 class BooksList extends Component {
   constructor(props) {
@@ -27,20 +30,7 @@ class BooksList extends Component {
           onClick={() => this.handleRemoveBook(book.id)}
         />
       ));
-    return (
-      <>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Book ID</th>
-              <th>Title</th>
-              <th>Category</th>
-            </tr>
-          </thead>
-          <tbody>{booksArr}</tbody>
-        </table>
-      </>
-    );
+    return <StyledTable>{booksArr}</StyledTable>;
   }
 }
 
