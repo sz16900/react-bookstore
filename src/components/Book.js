@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledRow = styled.div`
-  width: 80%;
+  width: 70%;
   margin: 1rem auto;
   border-radius: 4px;
   background-color: #fff;
@@ -12,12 +12,16 @@ const StyledRow = styled.div`
   display: flex;
   padding: 1rem;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
 `;
 
 const StyledLeft = styled.div`
-  width: 75%;
+  width: 65%;
   padding-right: 5rem;
+`;
+
+const StyledRight = styled.div`
+  width: 25%;
 `;
 
 const StyledTitle = styled.p`
@@ -71,6 +75,31 @@ const StyledLink = styled.button`
   padding-left: 0;
 `;
 
+const StyledCurrent = styled.p`
+  font-weight: 300;
+  font-size: 13px;
+  opacity: 0.5;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+`;
+
+const StyledChapter = styled.p`
+  text-transform: capitalize;
+  font-size: 16px;
+  letter-spacing: -0.4px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+`;
+
+const StyledUpdate = styled.button`
+  background-color: #0290ff !important;
+  padding: 0.25rem 1.35rem !important;
+  font-size: 13px;
+  text-transform: uppercase;
+  border: none;
+  color: white;
+`;
+
 const Book = ({ book, onClick }) => (
   <StyledRow>
     <StyledLeft>
@@ -85,6 +114,11 @@ const Book = ({ book, onClick }) => (
         <StyledLink type="button">Edit</StyledLink>
       </div>
     </StyledLeft>
+    <StyledRight>
+      <StyledCurrent>CURRENT CHAPTER</StyledCurrent>
+      <StyledChapter>Chapter Nth</StyledChapter>
+      <StyledUpdate>UPDATE PROGRESS</StyledUpdate>
+    </StyledRight>
   </StyledRow>
 );
 
