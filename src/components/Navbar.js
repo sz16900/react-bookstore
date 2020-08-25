@@ -6,8 +6,11 @@ import { changeFilter } from '../actions';
 import styled from 'styled-components';
 
 const StyledNav = styled.div`
-  padding: 1rem 3rem;
+  display: flex !important;
+  padding: 29px 3rem;
   background-color: white !important;
+  align-items: center;
+  flex-wrap: wrap;
 `;
 
 const StyledBrand = styled.a`
@@ -21,6 +24,14 @@ const StyledLink = styled.a`
   font-size: 12px;
   letter-spacing: 2px;
   color: #121212;
+  margin-left: 4em;
+`;
+
+const StyledOval = styled.div`
+  width: 45px;
+  height: 45px;
+  border: solid 1px #e8e8e8;
+  background: red;
 `;
 
 const NavBar = ({ filterCategory }) => {
@@ -33,6 +44,7 @@ const NavBar = ({ filterCategory }) => {
       <StyledBrand>Bookstore CMS</StyledBrand>
       <StyledLink>BOOKS</StyledLink>
       <CategoryFilter handleFilterChange={handleFilterChange} />
+      <StyledOval></StyledOval>
     </StyledNav>
   );
 };

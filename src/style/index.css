@@ -1,0 +1,14 @@
+body {
+  width: 1600px;
+  height: 1434px;
+  background-color: #f5f6fa;
+}
+
+.main-container {
+  width: 1400px;
+  height: 1097px;
+  margin: 149px 100px 188px 100px;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: white;
+}
