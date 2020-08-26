@@ -6,10 +6,23 @@ import styled from 'styled-components';
 
 const StyledLine = styled.p`
   width: 72%;
-  margin: 1rem auto;
+  margin: 3rem auto;
   background-color: #e8e8e8;
   height: 1px;
   border: solid 1px #e8e8e8;
+`;
+
+const StyledAdd = styled.p`
+  height: 24px;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888888;
+  margin: 0 9.5em;
 `;
 
 const StyledForm = styled.form`
@@ -36,12 +49,6 @@ const StyledCategory = styled.select`
   background-color: #ffffff;
 `;
 
-const StyledButton = styled.button`
-  width: 15%;
-  height: 45px;
-  background-color: #0290ff;
-`;
-
 const StyledOption = styled.option`
   height: 19px;
   font-family: Montserrat;
@@ -52,6 +59,17 @@ const StyledOption = styled.option`
   line-height: normal;
   letter-spacing: -0.15px;
   color: #c4c4c4;
+`;
+
+const StyledButton = styled.button`
+  width: 15%;
+  height: 45px;
+  background-color: #0290ff !important;
+  padding: 0.25rem 1.35rem !important;
+  font-size: 13px;
+  text-transform: uppercase;
+  border: none;
+  color: white;
 `;
 
 const categories = [
@@ -103,6 +121,7 @@ class BooksForm extends Component {
     return (
       <>
         <StyledLine />
+        <StyledAdd>ADD NEW BOOK</StyledAdd>
         <StyledForm onSubmit={this.handleSubmit}>
           <StyledInput
             className="plahol"
