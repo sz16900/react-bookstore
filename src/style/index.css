@@ -12,3 +12,16 @@ body {
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   background-color: white;
 }
+
+.plahol::placeholder {
+  width: 76px;
+  height: 19px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+}

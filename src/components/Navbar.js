@@ -24,7 +24,6 @@ const StyledBrand = styled.a`
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: var(--azure);
 `;
 
 const StyledLink = styled.a`
@@ -42,13 +41,6 @@ const StyledLink = styled.a`
   letter-spacing: 1.9px;
 `;
 
-// const StyledOval = styled.div`
-//   width: 45px;
-//   height: 45px;
-//   border: solid 1px #e8e8e8;
-//   background: red;
-// `;
-
 const StyledOval = styled.i`
   display: inline-block;
   border-radius: 60px;
@@ -56,8 +48,7 @@ const StyledOval = styled.i`
   padding: 0.7em 0.7em;
   position: relative;
   right: -700px;
-
-
+  color: #0290ff !important;
 `;
 
 const NavBar = ({ filterCategory }) => {
@@ -70,7 +61,12 @@ const NavBar = ({ filterCategory }) => {
       <StyledBrand>Bookstore CMS</StyledBrand>
       <StyledLink>BOOKS</StyledLink>
       <CategoryFilter handleFilterChange={handleFilterChange} />
-      <i><StyledOval class="fa fa-wrench" StyledLink="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" ></StyledOval></i>
+      <i>
+        <StyledOval
+          className="fa fa-user"
+          StyledLink="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        ></StyledOval>
+      </i>
     </StyledNav>
   );
 };

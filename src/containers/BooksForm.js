@@ -2,6 +2,57 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addBook } from '../actions/index';
+import styled from 'styled-components';
+
+const StyledLine = styled.p`
+  width: 72%;
+  margin: 1rem auto;
+  background-color: #e8e8e8;
+  height: 1px;
+  border: solid 1px #e8e8e8;
+`;
+
+const StyledForm = styled.form`
+  width: 72%;
+  margin: 1rem auto;
+  font-family: 'Roboto Slab', serif;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const StyledInput = styled.input`
+  width: 50%;
+  height: 45px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+`;
+
+const StyledCategory = styled.select`
+  width: 25%;
+  height: 45px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+`;
+
+const StyledButton = styled.button`
+  width: 15%;
+  height: 45px;
+  background-color: #0290ff;
+`;
+
+const StyledOption = styled.option`
+  height: 19px;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+`;
 
 const categories = [
   { id: 1, category: 'Action' },
@@ -10,7 +61,8 @@ const categories = [
   { id: 4, category: 'Horror' },
   { id: 5, category: 'Kids' },
   { id: 6, category: 'Learning' },
-  { id: 7, category: 'Sci-Fi' }];
+  { id: 7, category: 'Sci-Fi' },
+];
 
 class BooksForm extends Component {
   constructor(props) {
@@ -33,7 +85,7 @@ class BooksForm extends Component {
     event.preventDefault();
     const { addBook } = this.props;
     addBook(this.state);
-    this.setState(state => ({
+    this.setState((state) => ({
       id: state.id + 1,
       title: '',
       category: categories[0].category,
@@ -43,32 +95,49 @@ class BooksForm extends Component {
 
   render() {
     const { title, category } = this.state;
-    const options = categories.map(element => <option key={element.id}>{element.category}</option>);
+    const options = categories.map((element) => (
+      <option className="plahol" key={element.id}>
+        {element.category}
+      </option>
+    ));
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" name="title" value={title} placeholder="title" onChange={this.handleChange} required />
-        <select name="category" value={category} onChange={this.handleChange}>
-          {options}
-        </select>
-        <button type="submit">Submit</button>
-      </form>
+      <>
+        <StyledLine />
+        <StyledForm onSubmit={this.handleSubmit}>
+          <StyledInput
+            className="plahol"
+            type="text"
+            name="title"
+            value={title}
+            placeholder="Book Title"
+            onChange={this.handleChange}
+            required
+          />
+          <StyledCategory
+            name="category"
+            value={category}
+            onChange={this.handleChange}
+          >
+            {options}
+          </StyledCategory>
+          <StyledButton type="submit">Submit</StyledButton>
+        </StyledForm>
+      </>
     );
   }
 }
 
 BooksForm.propTypes = {
-  books: PropTypes.arrayOf(
-    PropTypes.object,
-  ).isRequired,
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
   addBook: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   books: state.books,
 });
 
-const mapDispatchToProps = dispatch => ({
-  addBook: book => dispatch(addBook(book)),
+const mapDispatchToProps = (dispatch) => ({
+  addBook: (book) => dispatch(addBook(book)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksForm);
