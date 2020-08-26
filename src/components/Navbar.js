@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import styled from 'styled-components';
 import CategoryFilter from './CategoryFilter';
 import { changeFilter } from '../actions';
-import styled from 'styled-components';
 
 const StyledNav = styled.div`
   display: flex !important;
@@ -52,7 +52,7 @@ const StyledOval = styled.i`
 `;
 
 const NavBar = ({ filterCategory }) => {
-  const handleFilterChange = (event) => {
+  const handleFilterChange = event => {
     event.preventDefault();
     filterCategory(event.target.value);
   };
@@ -65,7 +65,7 @@ const NavBar = ({ filterCategory }) => {
         <StyledOval
           className="fa fa-user"
           StyledLink="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        ></StyledOval>
+        />
       </i>
     </StyledNav>
   );
@@ -75,12 +75,12 @@ NavBar.propTypes = {
   filterCategory: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   filter: state.filter,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  filterCategory: (option) => dispatch(changeFilter(option)),
+const mapDispatchToProps = dispatch => ({
+  filterCategory: option => dispatch(changeFilter(option)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addBook } from '../actions/index';
 import styled from 'styled-components';
+import { addBook } from '../actions/index';
 
 const StyledLine = styled.p`
   width: 72%;
@@ -49,18 +49,6 @@ const StyledCategory = styled.select`
   background-color: #ffffff;
 `;
 
-const StyledOption = styled.option`
-  height: 19px;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: -0.15px;
-  color: #c4c4c4;
-`;
-
 const StyledButton = styled.button`
   width: 15%;
   height: 45px;
@@ -94,16 +82,16 @@ class BooksForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { name, value } = event.target;
-    this.setState((prevState) => ({ ...prevState, [name]: value }));
+    this.setState(prevState => ({ ...prevState, [name]: value }));
   };
 
   handleSubmit(event) {
     event.preventDefault();
     const { addBook } = this.props;
     addBook(this.state);
-    this.setState((state) => ({
+    this.setState(state => ({
       id: state.id + 1,
       title: '',
       category: categories[0].category,
@@ -113,7 +101,7 @@ class BooksForm extends Component {
 
   render() {
     const { title, category } = this.state;
-    const options = categories.map((element) => (
+    const options = categories.map(element => (
       <option className="plahol" key={element.id}>
         {element.category}
       </option>
@@ -151,12 +139,12 @@ BooksForm.propTypes = {
   addBook: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   books: state.books,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  addBook: (book) => dispatch(addBook(book)),
+const mapDispatchToProps = dispatch => ({
+  addBook: book => dispatch(addBook(book)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksForm);

@@ -147,7 +147,7 @@ const Book = ({ book, onClick }) => (
       </div>
     </StyledLeft>
     <StyledMiddle>
-      <img src="progressBar.png" />
+      <img src="progressBar.png" alt="this is a progress bar" />
       <div style={{ marginLeft: '1em' }}>
         <StyledPercentage>23%</StyledPercentage>
         <StyledCompleted>Completed</StyledCompleted>
