@@ -94,10 +94,10 @@ class BooksForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    const { name } = event.target;
-    this.setState({ [name]: event.target.value, title: event.target.value });
-  }
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState((prevState) => ({ ...prevState, [name]: value }));
+  };
 
   handleSubmit(event) {
     event.preventDefault();
