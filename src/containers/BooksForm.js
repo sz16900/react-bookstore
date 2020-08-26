@@ -1,7 +1,64 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { addBook } from '../actions/index';
+
+const StyledLine = styled.p`
+  width: 72%;
+  margin: 3rem auto;
+  background-color: #e8e8e8;
+  height: 1px;
+  border: solid 1px #e8e8e8;
+`;
+
+const StyledAdd = styled.p`
+  height: 24px;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888888;
+  margin: 0 9.5em;
+`;
+
+const StyledForm = styled.form`
+  width: 72%;
+  margin: 1rem auto;
+  font-family: 'Roboto Slab', serif;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const StyledInput = styled.input`
+  width: 50%;
+  height: 45px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+`;
+
+const StyledCategory = styled.select`
+  width: 25%;
+  height: 45px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+`;
+
+const StyledButton = styled.button`
+  width: 15%;
+  height: 45px;
+  background-color: #0290ff !important;
+  padding: 0.25rem 1.35rem !important;
+  font-size: 13px;
+  text-transform: uppercase;
+  border: none;
+  color: white;
+`;
 
 const categories = [
   { id: 1, category: 'Action' },
@@ -10,7 +67,8 @@ const categories = [
   { id: 4, category: 'Horror' },
   { id: 5, category: 'Kids' },
   { id: 6, category: 'Learning' },
-  { id: 7, category: 'Sci-Fi' }];
+  { id: 7, category: 'Sci-Fi' },
+];
 
 class BooksForm extends Component {
   constructor(props) {
@@ -24,10 +82,10 @@ class BooksForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    const { name } = event.target;
-    this.setState({ [name]: event.target.value, title: event.target.value });
-  }
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState(prevState => ({ ...prevState, [name]: value }));
+  };
 
   handleSubmit(event) {
     event.preventDefault();
@@ -43,23 +101,41 @@ class BooksForm extends Component {
 
   render() {
     const { title, category } = this.state;
-    const options = categories.map(element => <option key={element.id}>{element.category}</option>);
+    const options = categories.map(element => (
+      <option className="plahol" key={element.id}>
+        {element.category}
+      </option>
+    ));
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" name="title" value={title} placeholder="title" onChange={this.handleChange} required />
-        <select name="category" value={category} onChange={this.handleChange}>
-          {options}
-        </select>
-        <button type="submit">Submit</button>
-      </form>
+      <>
+        <StyledLine />
+        <StyledAdd>ADD NEW BOOK</StyledAdd>
+        <StyledForm onSubmit={this.handleSubmit}>
+          <StyledInput
+            className="plahol"
+            type="text"
+            name="title"
+            value={title}
+            placeholder="Book Title"
+            onChange={this.handleChange}
+            required
+          />
+          <StyledCategory
+            name="category"
+            value={category}
+            onChange={this.handleChange}
+          >
+            {options}
+          </StyledCategory>
+          <StyledButton type="submit">Submit</StyledButton>
+        </StyledForm>
+      </>
     );
   }
 }
 
 BooksForm.propTypes = {
-  books: PropTypes.arrayOf(
-    PropTypes.object,
-  ).isRequired,
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
   addBook: PropTypes.func.isRequired,
 };
 

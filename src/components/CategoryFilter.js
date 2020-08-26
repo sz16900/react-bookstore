@@ -1,20 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+  margin-left: 4em;
+`;
 
 const CategoryFilter = ({ handleFilterChange }) => {
   const categories = [
     'Action',
     'Biography',
     'History',
-    'horror',
+    'Horror',
     'Kids',
     'Learning',
     'Sci-Fi',
   ];
 
   return (
-    <div className="filter-container">
-      <p>Filter by category: </p>
+    <StyledDiv>
       <select className="select" name="category" onChange={handleFilterChange}>
         <option value="All" className="option">
           All
@@ -25,7 +29,7 @@ const CategoryFilter = ({ handleFilterChange }) => {
           </option>
         ))}
       </select>
-    </div>
+    </StyledDiv>
   );
 };
 

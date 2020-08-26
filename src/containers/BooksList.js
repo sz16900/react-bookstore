@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import Book from '../components/Book';
-import { removeBook, changeFilter } from '../actions/index';
-import CategoryFilter from '../components/CategoryFilter';
+import { removeBook } from '../actions/index';
+
+const StyledTable = styled.div``;
 
 class BooksList extends Component {
   constructor(props) {
     super(props);
     this.handleRemoveBook = this.handleRemoveBook.bind(this);
-    this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   handleRemoveBook(id) {
     const { removeBook } = this.props;
     removeBook(id);
-  }
-
-  handleFilterChange(event) {
-    event.preventDefault();
-    const { changeFilter } = this.props;
-    changeFilter(event.target.value);
   }
 
   render() {
@@ -35,33 +30,14 @@ class BooksList extends Component {
           onClick={() => this.handleRemoveBook(book.id)}
         />
       ));
-    return (
-      <>
-        <CategoryFilter handleFilterChange={this.handleFilterChange} />
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Book ID</th>
-              <th>Title</th>
-              <th>Category</th>
-            </tr>
-          </thead>
-          <tbody>{booksArr}</tbody>
-        </table>
-      </>
-    );
+    return <StyledTable>{booksArr}</StyledTable>;
   }
 }
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filter: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
-  filter: PropTypes.string,
-  changeFilter: PropTypes.func.isRequired,
-};
-
-BooksList.defaultProps = {
-  filter: 'All',
 };
 
 const mapStateToProps = state => ({
@@ -71,7 +47,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   removeBook: id => dispatch(removeBook(id)),
-  changeFilter: option => dispatch(changeFilter(option)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
