@@ -15,15 +15,14 @@ const StyledRow = styled.div`
 `;
 
 const StyledLeft = styled.div`
-  width: 35%;
+  width: 40%;
   padding-right: 5rem;
 `;
 
 const StyledMiddle = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 30%;
+  width: 25%;
 `;
 
 const StyledPercentage = styled.p`
@@ -38,7 +37,6 @@ const StyledPercentage = styled.p`
   letter-spacing: normal;
   color: black;
   margin: 0;
-  margin-top: 0.8em;
 `;
 
 const StyledCompleted = styled.p`
@@ -149,8 +147,11 @@ const Book = ({ book, onClick }) => (
       </div>
     </StyledLeft>
     <StyledMiddle>
-      <StyledPercentage>0%</StyledPercentage>
-      <StyledCompleted>Completed</StyledCompleted>
+      <img src="progressBar.png" />
+      <div style={{ marginLeft: '1em' }}>
+        <StyledPercentage>23%</StyledPercentage>
+        <StyledCompleted>Completed</StyledCompleted>
+      </div>
     </StyledMiddle>
     <StyledRight>
       <StyledCurrent>CURRENT CHAPTER</StyledCurrent>

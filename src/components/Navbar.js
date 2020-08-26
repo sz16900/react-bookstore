@@ -43,7 +43,7 @@ const StyledLink = styled.a`
 
 const StyledOval = styled.i`
   display: inline-block;
-  border-radius: 60px;
+  border-radius: 16px;
   box-shadow: 0px 0px 2px #888;
   padding: 0.7em 0.7em;
   position: relative;
