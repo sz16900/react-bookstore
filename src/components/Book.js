@@ -12,12 +12,46 @@ const StyledRow = styled.div`
   display: flex;
   padding: 1rem;
   justify-content: space-between;
-  // align-items: center;
 `;
 
 const StyledLeft = styled.div`
-  width: 65%;
+  width: 35%;
   padding-right: 5rem;
+`;
+
+const StyledMiddle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+`;
+
+const StyledPercentage = styled.p`
+  width: 47px;
+  height: 39px;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: black;
+  margin: 0;
+  margin-top: 0.8em;
+`;
+
+const StyledCompleted = styled.p`
+  width: 80px;
+  height: 18px;
+  opacity: 0.5;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
 `;
 
 const StyledRight = styled.div`
@@ -114,6 +148,10 @@ const Book = ({ book, onClick }) => (
         <StyledLink type="button">Edit</StyledLink>
       </div>
     </StyledLeft>
+    <StyledMiddle>
+      <StyledPercentage>0%</StyledPercentage>
+      <StyledCompleted>Completed</StyledCompleted>
+    </StyledMiddle>
     <StyledRight>
       <StyledCurrent>CURRENT CHAPTER</StyledCurrent>
       <StyledChapter>Chapter Nth</StyledChapter>
