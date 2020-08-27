@@ -1,0 +1,42 @@
+/* universal */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab:wght@300;700&display=swap');
+
+html,
+body {
+  font-size: 16px;
+
+  /* overflow-x: hidden; */
+  background-color: #f5f5f5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  width: 1300px;
+  height: 1300px;
+  background-color: #f5f6fa;
+}
+
+.main-container {
+  width: 1300px;
+  height: 1097px;
+  margin: 149px 100px 188px 100px;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: white;
+}
+
+.plahol::placeholder {
+  width: 76px;
+  height: 19px;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+}

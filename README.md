@@ -5,14 +5,13 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-
 In this project, we are going to make a React-Redux bookstore application to demonstrate mastery of building React components by following step-by-step guidelines from a fake company based in "Germany". Awesomized with pure CSS. This project is completed by Seth Zea and Shubbham Raj, in partial requirements of the Microverse cirriculum.
 
 ---
 
 ## Live Demo
 
-[Live Link](https://react-bookstore-m1.herokuapp.com/)
+[Live Link](https://blissful-bookstore-31231234.herokuapp.com/)
 
 ---
 
