@@ -15,13 +15,13 @@ body {
 }
 
 body {
-  width: 1600px;
-  height: 1434px;
+  width: 1300px;
+  height: 1300px;
   background-color: #f5f6fa;
 }
 
 .main-container {
-  width: 1400px;
+  width: 1300px;
   height: 1097px;
   margin: 149px 100px 188px 100px;
   border-radius: 4px;
