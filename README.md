@@ -24,6 +24,7 @@ In this project, we are going to make a React-Redux bookstore application to dem
 - Redux
 - Node
 - Flexbox
+- CSS Grid
 
 ---
 
