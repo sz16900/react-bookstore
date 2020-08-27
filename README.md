@@ -22,6 +22,8 @@ In this project, we are going to make a React-Redux bookstore application to dem
 - Javascript
 - React
 - Redux
+- Node
+- Flexbox
 
 ---
 
